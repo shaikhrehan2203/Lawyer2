@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawyer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    /* .splashscreen {
+      width: 100%;
+      height: 100vh;
+      background-color: rgb(0, 0, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 111111111;
+      display: none;
+
+    } */
+  </style>
+
+  <div class="splashscreen">
+    <!-- <div class="sp" style="height: 60px;width: 10px;background-color: white;"></div>
+    <div class="sp ms-2" style="height: 50px;width: 10px;background-color: white;"></div>
+    <div class="sp ms-2" style="height: 40px;width: 10px;background-color: white;"></div>
+    <div class="sp ms-2" style="height: 30px;width: 10px;background-color: white;"></div> -->
+    <!-- <div class="loading-wave">
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+    </div> -->
+  </div>
+
+  <script>
+    document.addEventListener(
+      'DOMContentLoaded', function () {
+        let splashVar = document.getElementsByClassName("splashscreen")[0];
+        if (splashVar) {
+          setTimeout(function () {
+            splashVar.style.display = "flex"
+            setTimeout(function () {
+              splashVar.style.display = "none"
+            }, 5000)
+          }
+          )
+        }
+      }
+    )
+  </script>
+
+
+  <div class="container-fluid p-0" style="overflow: hidden;">
+
+
+    <div class="row ">
+
+      <nav style="z-index: 1;border-bottom: 1px solid #898d954f;"
+        class="navbar navbar-expand-lg p-3 py-4 position-absolute top-0 container-fluid left-0" data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand " href="#"><img class="" src="demo-lawyer-logo-white.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto ms-auto  mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a style="font-size: 18px;font-family: arial;" class="nav-link active text-white nav-data"
+                  aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a style="font-size: 18px;font-family: arial;" class="nav-link text-white nav-data"
+                  href="#About">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a style="font-size: 18px;font-family: arial;" class="nav-link dropdown-toggle text-white nav-data"
+                  href="#practice" role="button" data-bs-toggle="dropdown" aria-expanded="false">Practise areas
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider text-white">
+                  </li>
+                  <li><a style="font-size: 18px;font-family: arial;" class="dropdown-item text-white" href="#">Something
+                      else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item ">
+                <a style="font-size: 18px;font-family: arial;" class="nav-link  text-white nav-data"
+                  aria-disabled="true" href="#attorneys">Attorneys</a>
+              </li>
+              <li class="nav-item">
+                <a style="font-size: 18px;font-family: arial;" class="nav-link  text-white nav-data"
+                  aria-disabled="true" href="#Journal">Journal</a>
+              </li>
+              <li class="nav-item">
+                <a style="font-size: 18px;font-family: arial;" class="nav-link  text-white nav-data"
+                  aria-disabled="true" href="#contact">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <button class=" btn-outline-success" type="submit"><i class="bi bi-envelope"></i> Send Message</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-touch="true" style="overflow: hidden;">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner first-section">
+          <div class="carousel-item active">
+            <img src="demo-lawyer-slider-01.jpg" class="d-block w-100 ii" alt="...">
+            <div class="col-6  d-flex align-items-start justify-content-center flex-column py-3"
+              style="height: 500px;position: absolute;z-index: 111111;top: 100px;left: 40px;" data-aos="fade-right" data-aos-duration="3000">
+              <p class="data"
+                style="color: #B98E44;font-size: 19px;font-family: sans-serif;border-bottom: 1px solid #B98E44;">
+                Professional lawyers team</p>
+              <h1 class="data-0" style="color: #ffffff;font-size: 80px;font-family: serif;">We are here <br> for the
+                <span style="font-weight: 600;font-style: italic;">voice <br> of justice</span>
+              </h1>
+              <button style="background-color: white;border-radius: 30px;padding: 12px;border: none;font-weight: bold;font-size: 18px;font-family: serif;">EXPLORE MORE <i class="bi bi-arrow-right-circle-fill " style="font-size: 20px;"></i></button>
+            </div>
+          </div>
+          <div class="carousel-item first-section">
+            <img src="demo-lawyer-slider-02.jpg" class="d-block w-100 ii" alt="...">
+            <div class="col-6 data d-flex align-items-start justify-content-center flex-column py-3"
+              style="height: 500px;position: absolute;z-index: 111111;top: 100px;left: 40px;" data-aos="fade-right" data-aos-duration="3000">
+              <p class="data"
+                style="color: #B98E44;font-size: 19px;font-family: sans-serif;border-bottom: 1px solid #B98E44;">
+                Professional lawyers team</p>
+              <h1 class="data-0" style="color: #ffffff;font-size: 80px;font-family: serif;">We are here <br> for the
+                <span style="font-weight: 600;font-style: italic;">voice <br> of justice</span>
+              </h1> 
+              <button style="background-color: white;border-radius: 30px;padding: 12px;border: none;font-weight: bold;font-size: 18px;font-family: serif;">EXPLORE MORE <i class="bi bi-arrow-right-circle-fill " style="font-size: 20px;"></i></button>
+            </div>
+          </div>
+          <div class="carousel-item first-section">
+            <img src="demo-lawyer-slider-03.jpg" class="d-block w-100 ii" alt="...">
+            <div class="col-6 data d-flex align-items-start justify-content-center flex-column py-3"
+              style="height: 500px;position: absolute;z-index: 111111;top: 100px;left: 40px;" data-aos="fade-right" data-aos-duration="3000">
+              <p class="data"
+                style="color: #B98E44;font-size: 19px;font-family: sans-serif;border-bottom: 1px solid #B98E44;">
+                Professional lawyers team</p>
+              <h1 class="data-0" style="color: #ffffff;font-size: 80px;font-family: serif;">We are here <br> for the
+                <span style="font-weight: 600;font-style: italic;">voice <br> of justice</span>
+              </h1>
+              
+              <button style="background-color: white;border-radius: 30px;padding: 12px;border: none;font-weight: bold;font-size: 18px;font-family: serif;">EXPLORE MORE <i class="bi bi-arrow-right-circle-fill " style="font-size: 20px;"></i></button>
+
+
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container-fluid py-4">
+    <div class="container">
+      <div class="row" id="About">
+        <div class="col-lg-6 d-flex align-items-center justify-content-center" style="position: relative;"
+          data-aos="fade-right" data-aos-duration="3000">
+          <div class=""
+            style="position: absolute;background-color: #ffffff;height: 200px;width: 35%;bottom: 100px;left: -10px;overflow: hidden;">
+            <h1 class="text-center h-1"
+              style="color: #152833;z-index: 111111;position: relative;font-style: italic;font-weight: 550;font-family: serif;font-size: 70px;margin-top: 20px;">
+              18</h1>
+            <h1 class="text-center p-1"
+              style="color: #152833;z-index: 111111;position: relative;font-style: italic;font-weight: 550;font-family: serif;font-size: 30px;">
+              years of experience</h1>
+            <div class=""
+              style="background-color: #B98E44;height: 160px;width: 160px;border-radius: 100%;position: absolute;top: -45px;left: -50px;">
+              <h1 style="z-index: -1111;">18</h1>
+            </div>
+          </div>
+          <img src="demo-lawyer-01.jpg" style="height: 520px;width: 400px;border-radius: 10px;" alt="">
+        </div>
+        <div class="col-lg-6 d-flex align-items-start justify-content-evenly flex-column px-0">
+          <div class="col-12 d-flex align-items-start justify-content-evenly flex-column" data-aos="fade-up"
+            data-aos-duration="1500">
+            <img src="demo-lawyer-03.png" style="height: 10%;" alt="">
+            <h1 class="display-5" style="color: #152833;font-weight: 400;">We are here to fight against <span
+                style="font-family: itallc;font-weight: bold;">any violance.</span></h1>
+            <p style="color: #898D95;font-size: 17PX;" class="col-8">Lorem ipsum is simply dummy text the printing and
+              typesetting industry lorem industry standard.</p>
+            <h1 style="font-size: 18px;color: #152833;"> <img src="check-mark.png" style="height: 20px;" alt=""> Full
+              service corporate & commercial law.</h1>
+            <h1 style="color: #152833;font-size: 18px;"> <img src="check-mark.png" style="height: 20px;" alt="">
+              Effective
+              and innovative legal solutions.</h1>
+            <!-- From Uiverse.io by d4niz -->
+            <div class=" d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-duration="1500">
+              <button style="background-color: #152833;border-radius: 30px;padding: 12px;border: none;font-weight: bold;font-size: 18px;font-family: serif;color: #ffffff;">EXPLORE MORE <i class="bi bi-arrow-right-circle-fill ms-1" style="font-size: 20px;background-color: #152833;"></i></button>
+              <!-- <button class="contactButton">
+              Learn More
+              <div class="iconButton">
+                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"></path>
+                </svg>
+              </div>
+            </button> -->
+            <div class="">
+              <h1 class="ms-3 mt-2 icon-1 "><i class="bi bi-telephone-outbound"></i> 123 456 7890</h1>
+            </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-4" style="background-color: rgba(243, 238, 238, 0.87);">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 d-flex align-items-center justify-content-center flex-column">
+          <p style="border: 1px solid #B98E44;width: 50%;"></p>
+          <p style="border: 1px solid #B98E44;width: 50%;"></p>
+        </div>
+        <div class="col-lg-8 d-flex align-items-center justify-content-center">
+          <h1 style="font-size: 28px;font-weight: 400;font-family: serif;">Committed to providing solutions for <span
+              style="font-weight: bold;font-style: italic;">negotiation support</span> </h1>
+        </div>
+        <div class="col-lg-2 d-flex align-items-center justify-content-center flex-column">
+          <p style="border: 1px solid #B98E44;width: 50%;"></p>
+          <p style="border: 1px solid #B98E44;width: 50%;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-5" style="background-color: #152833;">
+    <div class="row  flex-md-nowrap " id="practice">
+      <div class="col-lg-4 d-flex align-items-start justify-content-center flex-column py-4 ">
+        <p style="color: #B98E44;font-size: 20px;">Areas of practice</p>
+        <h1 style="color: #ffffff;" class="display-4">Different case, need <span
+            style="font-weight: bolder;font-style: italic;border-bottom: 3px solid #ffffff;">different services.</span>
+        </h1>
+        <div class="mt-4">
+          <i style="background-color: #898d951c;border-radius: 50%;color: #ffffff;padding: 8px 11px;"
+            class="fs-2 bi bi-arrow-left-short"></i>
+          <i style="background-color: #898d951c;border-radius: 50%;color: #ffffff;padding: 8px 11px;"
+            class="fs-2 bi bi-arrow-right-short ms-3"></i>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="row flex-nowrap" style="overflow: hidden;">
+          <div class="col-lg-5 slider-card" style="height: 400px;">
+
+            <div class="col-12 py-5 d-flex justify-content-end align-items-start flex-column"
+              style="border-radius: 10px; background-image: url(demo-lawyer-home-01.jpg);background-size: cover;height: 400px;position: relative;">
+              <img style="z-index: 1111;height: 70px;position: absolute;top: 19px;left: 30px;"
+                src="demo-lawyer-home-icon-01.png">
+              <div class="col-10 d-flex justify-content-center align-items-start ">
+                <h2 class="fs-4 mt-3 me-3" style="color: white;font-style: italic;">Trust And Estate</h2>
+                <i style="background-color: white;color: black;border-radius: 100%;padding: 10px 17px;"
+                  class="bi bi-arrow-right fs-4"></i>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-lg-5 slider-card" style="height: 400px;">
+
+            <div class="col-12 py-5 d-flex justify-content-end align-items-start flex-column"
+              style="border-radius: 10px; background-image: url(demo-lawyer-home-02.jpg);background-size: cover;height: 400px;position: relative;">
+              <img style="z-index: 1111;height: 70px;position: absolute;top: 19px;left: 30px;"
+                src="demo-lawyer-home-icon-02.png" alt="">
+              <div class="col-10 d-flex justify-content-center align-items-start ">
+                <h2 class="fs-4 mt-3 me-3" style="color: white;font-style: italic;">Trust And Estate</h2>
+                <i style="background-color: white;color: black;border-radius: 100%;padding: 10px 17px;"
+                  class="bi bi-arrow-right fs-4"></i>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="col-lg-5 slider-card" style="height: 400px;">
+
+            <div class="col-12 py-5 d-flex justify-content-end align-items-start flex-column"
+              style="border-radius: 10px; background-image: url(demo-lawyer-home-03.jpg);background-size: cover;height: 400px;position: relative;">
+              <img style="z-index: 1111;height: 70px;position: absolute;top: 19px;left: 30px;"
+                src="demo-lawyer-home-icon-03.png">
+              <div class="col-10 d-flex justify-content-center align-items-start ">
+                <h2 class="fs-4 mt-3 me-3" style="color: white;font-style: italic;">Trust And Estate</h2>
+                <i style="background-color: white;color: black;border-radius: 100%;padding: 10px 17px;"
+                  class="bi bi-arrow-right fs-4"></i>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-lg-5 slider-card" style="height: 400px;">
+
+            <div class="col-12 py-5 d-flex justify-content-end align-items-start flex-column"
+              style="border-radius: 10px; background-image: url(demo-lawyer-home-01.jpg);background-size: cover;height: 400px;position: relative;">
+              <img style="z-index: 1111;height: 70px;position: absolute;top: 19px;left: 30px;"
+                src="demo-lawyer-home-icon-01.png">
+              <div class="col-10 d-flex justify-content-center align-items-start ">
+                <h2 class="fs-4 mt-3 me-3" style="color: white;font-style: italic;">Trust And Estate</h2>
+                <i style="background-color: white;color: black;border-radius: 100%;padding: 10px 17px;"
+                  class="bi bi-arrow-right fs-4"></i>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-lg-5 slider-card" style="height: 400px;">
+
+            <div class="col-12 py-5 d-flex justify-content-end align-items-start flex-column"
+              style="border-radius: 10px; background-image: url(demo-lawyer-home-02.jpg);background-size: cover;height: 400px;position: relative;">
+              <img style="z-index: 1111;height: 70px;position: absolute;top: 19px;left: 30px;"
+                src="demo-lawyer-home-icon-02.png">
+              <div class="col-10 d-flex justify-content-center align-items-start ">
+                <h2 class="fs-4 mt-3 me-3" style="color: white;font-style: italic;">Trust And Estate</h2>
+                <i style="background-color: white;color: black;border-radius: 100%;padding: 10px 17px;"
+                  class="bi bi-arrow-right fs-4"></i>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-lg-5 slider-card" style="height: 400px;">
+
+            <div class="col-12 py-5 d-flex justify-content-end align-items-start flex-column"
+              style="border-radius: 10px; background-image: url(demo-lawyer-home-03.jpg);background-size: cover;height: 400px;position: relative;">
+              <img style="z-index: 1111;height: 70px;position: absolute;top: 19px;left: 30px;"
+                src="demo-lawyer-home-icon-03.png">
+              <div class="col-10 d-flex justify-content-center align-items-start ">
+                <h2 class="fs-4 mt-3 me-3" style="color: white;font-style: italic;">Trust And Estate</h2>
+                <i style="background-color: white;color: black;border-radius: 100%;padding: 10px 17px;"
+                  class="bi bi-arrow-right fs-4"></i>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid py-5">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-6  p-5 d-flex justify-content-center align-items-center flex-wrap"
+          style="position: relative;">
+
+          <img style="position: absolute;right: 0;bottom: 0;" src="demo-lawyer-home-dotted-pattern.webp"  alt="">
+
+          <div class="col-md-6 col-6 bg-white d-flex justify-content-center align-items-center flex-column px-5"
+            style="border-right: 1px solid rgba(0, 0, 0, 0.234);border-bottom: 1px solid rgba(0, 0, 0, 0.194); height: 200px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.31);">
+            <h1 class="display-2 fw-bold" style="color: #152833;">86%</h1>
+            <span style="color: #898D95;font-weight: bold;font-size: 17px;">Cases Solved</span>
+          </div>
+
+          <div class="col-md-6 col-6 bg-white d-flex justify-content-center align-items-center flex-column px-5"
+            style="border-bottom: 1px solid rgba(0, 0, 0, 0.194); height: 200px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.31);">
+            <h1 class="display-2 fw-bold" style="color: #152833;">350</h1>
+            <span style="color: #898D95;font-weight: bold;font-size: 17px;">Happy Clients</span>
+          </div>
+
+          <div class="col-md-6 col-6 bg-white d-flex justify-content-center align-items-center flex-column px-5"
+            style="border-right: 1px solid rgba(0, 0, 0, 0.234); height: 200px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.31);z-index: 1111;">
+            <h1 class="display-2 fw-bold" style="color: #152833;">59+</h1>
+            <span style="color: #898D95;font-weight: bold;font-size: 17px;">Award winning</span>
+          </div>
+
+          <div class="col-md-6 col-6 bg-white d-flex justify-content-center align-items-center flex-column px-5"
+            style=" height: 200px;z-index: 111;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.31);">
+            <h1 class="display-2 fw-bold" style="color: #152833;">100%</h1>
+            <span style="color: #898D95;font-weight: bold;font-size: 17px;">Sucess Chance</span>
+          </div>
+        </div>
+
+        <div class="col-lg-6 py-3  d-flex justify-content-center align-items-center flex-column"
+          style="overflow: hidden;" data-aos="fade-down" data-aos-duration="1900">
+          <h1 class="mt-2 " style="color: #152833;">We feel very proud for <br> <span
+              style="border-bottom: 2px solid #071822;color: #051925;font-weight: bolder;font-family: cursive;"> our
+              achievement.</span></h1>
+
+
+          <div class="col-md-10  d-flex justify-content-center align-items-center flex-column ms-3 mt-4 py-3"
+            style="overflow: hidden;">
+            <div class="col-11  for-card">
+              <span class="for-1" style="font-size: 18px;font-weight: 600;">You Deserve time to Recover <i
+                  class="bi bi-caret-down-fill ms-2"></i></span>
+              <div class="for-box d-flex justify-content-start align-items-start" style="width: 100%;">
+                <p>Action games emphasize physical challenges,
+                  including hand-eye coordination and reaction-time. </p>
+              </div>
+            </div>
+
+            <div class="col-11 mt-3 for-card">
+              <span class="for-1" style="font-size: 18px;font-weight: 600;">Don't settle for less than you deserve<i
+                  class="bi bi-caret-down-fill ms-2"></i></span>
+              <div class="for-box d-flex justify-content-start align-items-start" style="width: 100%;">
+                <p>Action games emphasize physical challenges,
+                  including hand-eye coordination and reaction-time. </p>
+              </div>
+            </div>
+
+            <div class="col-11 mt-3  for-card">
+              <span class="for-1" style="font-size: 18px;font-weight: 600;">Experience you can trust <i
+                  class="bi bi-caret-down-fill ms-2"></i></span>
+              <div class="for-box d-flex justify-content-start align-items-start" style="width: 100%;">
+                <p>Action games emphasize physical challenges,
+                  including hand-eye coordination and reaction-time. </p>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container-fluid py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 d-flex align-items-center justify-content-center">
+          <h2 style="font-family: serif;color: #152833;">Powerful <br> <span
+              style="font-style: italic;font-weight: bold;border-bottom: 2px solid black;color: #152833;">achievement</span>
+          </h2 data-aos="fade-left" data-aos-duration="1500">
+        </div>
+        <div class="col-lg-2 col-md-6 col-6 d-flex align-items-center justify-content-center py-4">
+          <img src="demo-lawyer-awards-01.webp" style="height: 100px;object-fit: cover;" alt="" data-aos="fade-left"
+            data-aos-duration="1500">
+        </div>
+        <div class="col-lg-2 col-md-6 col-6 d-flex align-items-center justify-content-center py-4">
+          <img src="demo-lawyer-awards-02.webp" style="height: 100px;object-fit: cover;" alt="" data-aos="fade-left"
+            data-aos-duration="1500">
+        </div>
+        <div class="col-lg-2 col-md-6 col-6 d-flex align-items-center justify-content-center py-4">
+          <img src="demo-lawyer-awards-03.webp" style="height: 100px;object-fit: cover;" alt="" data-aos="fade-left"
+            data-aos-duration="1500">
+        </div>
+        <div class="col-lg-2 col-md-6 col-6 d-flex align-items-center justify-content-center py-4">
+          <img src="demo-lawyer-awards-04.webp" style="height: 100px;object-fit: cover;" alt="" data-aos="fade-left"
+            data-aos-duration="1500">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-lg-6 d-flex align-items-center justify-content-center py-3" style="background-color: #152833;">
+        <div class="col-10 d-flex align-items-start justify-content-center flex-column">
+          <p style="color: #B98E44;font-size: 20px;">What we are expert</p>
+          <h2 style="color:#ffffff;font-family:serif;font-size: 45px;">We here for provide <br> high quality <span
+              style="font-style: italic;font-weight: 550;border-bottom: 2px solid #ffffff;">legal consultancy.</span>
+          </h2>
+          <p style="color: #898D95;font-size: 17px;">Lorem ipsum is simply dummy text of the printing and <br>
+            typesetting industry lorem industry dummy text.</p>
+          <div class="col-10 d-flex align-items-center justify-content-center ">
+            <div class="col-4 d-flex align-items-center justify-content-center flex-column ">
+              <div class="data-div d-flex align-items-center justify-content-center me-5"
+                style="height: 95px;width: 95px;background-color: #B98E44;border-radius: 50%;outline: 2px solid #B98E44;outline-offset: 4px;">
+                <h1 style="font-size: 18px;color: #152833;">100%</h1>
+              </div>
+            </div>
+            <div class="col-8 d-flex align-items-start justify-content-start">
+              <h1 style="color: white;font-size: 18px;font-family: sans-serif;">Successfully handle cases</h1>
+            </div>
+          </div>
+          <div class="col-10 d-flex align-items-center justify-content-center mt-4">
+            <div class="col-4 d-flex align-items-center justify-content-center flex-column ">
+              <div class="data-div d-flex align-items-center justify-content-center me-5"
+                style="height: 95px;width: 95px;background-color: #B98E44;border-radius: 50%;outline: 2px solid #B98E44;outline-offset: 4px;">
+                <h1 style="font-size: 18px;color: #152833;">100%</h1>
+              </div>
+            </div>
+            <div class="col-8 d-flex align-items-start justify-content-start">
+              <h1 style="color: white;font-size: 18px;font-family: sans-serif;">Experienced business lawyers</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 p-0 " style="height: 650px;position: relative;">
+        <img src="demo-lawyer-home-06.jpg" style="height: 100%;width: 100%;object-fit: cover;" alt="">
+        <div class="col-6 d-md-flex d-done align-items-start justify-content-center flex-column " data-aos="fade-left" data-aos-duration="2500"
+          style="position: absolute;height: 250px;top:250px;right:420px;background-color: #ffffff;border-radius: 6px;display: none;">
+          <div class="col-12 d-flex align-items-start justify-content-center flex-column">
+            <h1 class="ms-4" style="font-size: 22px;font-family: serif;">Making sure that our clients are <br> fully
+              protected in every <span style="font-style: italic;font-weight: 550;">step of <br> process</span></h1>
+          </div>
+          <div class="col-12 d-flex align-items-center justify-content-center">
+            <div class="col-5 d-flex align-items-start justify-content-start">
+              <img src="avtar-25.jpg" style="height: 100px;width: 100px;border-radius: 50%;" alt="">
+            </div>
+            <div class="col-6 d-flex align-items-start justify-content-center flex-column">
+              <p style="color: #152833;font-size: 20px;font-family: sans;font-weight: bold;">Matthew taylor</p>
+              <span>
+                <i style="color:darkorange;" class="bi bi-star-fill fs-5"></i>
+                <i style="color:darkorange;" class="bi bi-star-fill fs-5"></i>
+                <i style="color:darkorange;" class="bi bi-star-fill fs-5"></i>
+                <i style="color:darkorange;" class="bi bi-star-fill fs-5"></i>
+                <i style="color:darkorange;" class="bi bi-star-fill fs-5"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="container-fluid py-5" style="background-color:#f6f3ef;">
+    <div class="container">
+      <div class="row">
+        <p style="color: #B98E44;font-size: 19px;text-align: center;">Qualified our experts</p>
+        <h2 style="color: #152833;font-size: 40px;font-family: serif;text-align: center;">Meet our <span
+            style="font-weight: 550;border-bottom: 2px solid black;font-style: italic;">attorneys</span></h2>
+        <div class="row" id="attorneys">
+          <div class="col-lg-3 d-flex align-items-center justify-content-center flex-column mt-3" data-aos="fade-down"
+            data-aos-duration="2500">
+            <div class="col-12 d-flex align-items-center justify-content-evenly flex-column py-4"
+              style="background-color: white;">
+              <span><img class="mb-3" src="team-22.jpg" style="height: 160px;width: 160px;border-radius: 50%;"
+                  alt=""></span>
+              <h2 class="data-1">Evan thomson</h2>
+              <p style="color: #898D95;font-size: 17px;font-family: arial;text-align: center;" class="mt-1">I'm Evan,
+                Expert in <br> <span
+                  style=" border-bottom: 1px solid #152833; color: #152833;font-size: 17px;">criminal</span> lawyer.</p>
+              <div class="col-10 d-flex align-items-center justify-content-evenly py-2"
+                style="border-top: 1px solid #898D95;overflow: hidden;">
+                <i class="icon-2 fs-4 mt-3 bi bi-facebook"></i>
+                <i class="icon-3 fs-4 mt-3 bi bi-dribbble"></i>
+                <i class="icon-2 fs-4 mt-3 bi bi-twitter"></i>
+                <i class="icon-4 fs-4 mt-3 bi bi-instagram"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 d-flex align-items-center justify-content-center flex-column mt-3" data-aos="fade-up"
+            data-aos-duration="2500">
+            <div class="col-12 d-flex align-items-center justify-content-evenly flex-column py-4"
+              style="background-color: white;">
+              <span><img class="mb-3" src="team-21.jpg" style="height: 160px;width: 160px;border-radius: 50%;"
+                  alt=""></span>
+              <h2 class="data-1">Bryan jonhson</h2>
+              <p style="color: #898D95;font-size: 17px;font-family: arial;text-align: center;" class="mt-1">I'm Bryan,
+                Expert in <br> <span
+                  style=" border-bottom: 1px solid #152833; color: #152833;font-size: 17px;">family</span> lawyer. </p>
+              <div class="col-10 d-flex align-items-center justify-content-evenly py-2"
+                style="border-top: 1px solid #898D95;overflow: hidden;">
+                <i class="icon-2 fs-4 mt-3 bi bi-facebook"></i>
+                <i class="icon-3 fs-4 mt-3 bi bi-dribbble"></i>
+                <i class="icon-2 fs-4 mt-3 bi bi-twitter"></i>
+                <i class="icon-4 fs-4 mt-3 bi bi-instagram"></i>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 d-flex align-items-center justify-content-center flex-column mt-3" data-aos="fade-down"
+            data-aos-duration="2500">
+            <div class="col-12 d-flex align-items-center justify-content-evenly flex-column py-4"
+              style="background-color: white;">
+              <span><img class="mb-3" src="team-23.jpg" style="height: 160px;width: 160px;border-radius: 50%;"
+                  alt=""></span>
+              <h2 class="data-1">Jeremy dupont</h2>
+              <p style="color: #898D95;font-size: 17px;font-family: arial;text-align: center;" class="mt-1">I'm Jemmy,
+                Expert in <br> <span
+                  style=" border-bottom: 1px solid #152833; color: #152833;font-size: 17px;">corporate</span> lawyer.
+              </p>
+              <div class="col-10 d-flex align-items-center justify-content-evenly py-2"
+                style="border-top: 1px solid #898D95;overflow: hidden;">
+                <i class="icon-2 fs-4 mt-3 bi bi-facebook"></i>
+                <i class="icon-3 fs-4 mt-3 bi bi-dribbble"></i>
+                <i class="icon-2 fs-4 mt-3 bi bi-twitter"></i>
+                <i class="icon-4 fs-4 mt-3 bi bi-instagram"></i>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 d-flex align-items-center justify-content-center flex-column mt-3" data-aos="fade-up"
+            data-aos-duration="2500">
+            <div class="col-12 d-flex align-items-center justify-content-evenly flex-column py-4"
+              style="background-color: white;">
+              <span><img class="mb-3" src="team-56.jpg" style="height: 160px;width: 160px;border-radius: 50%;"
+                  alt=""></span>
+              <h2 class="data-1">Jeremy watson
+              </h2>
+              <p style="color: #898D95;font-size: 17px;font-family: arial;text-align: center;" class="mt-1">I'm Jeremy,
+                Expert in <br> <span style=" border-bottom: 1px solid #152833; color: #152833;font-size: 17px;">business
+                </span> lawyer.</p>
+              <div class="col-10 d-flex align-items-center justify-content-evenly py-2"
+                style="border-top: 1px solid #898D95;overflow: hidden;">
+                <i class="icon-2 fs-4 mt-3 bi bi-facebook"></i>
+                <i class="icon-3 fs-4 mt-3 bi bi-dribbble"></i>
+                <i class="icon-2 fs-4 mt-3 bi bi-twitter"></i>
+                <i class="icon-4 fs-4 mt-3 bi bi-instagram"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <h1 class="mt-5" style="color: #152833;font-size: 20px;text-align: center;"><i class="bi bi-award"
+            style="color: #B98E44;font-size: 36px;"></i> We have <span
+            style="font-style: italic;font-weight: 550;font-size: 26px;">10 years</span> of experience and achieved
+          <span style="font-style: italic;font-weight: 550;font-size: 26px;">some awards.</span>
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-4" style="background-color: #f6f3ef;height: 300px;">
+    <div class="container ">
+      <div class="col-lg-12 eight-section  d-md-flex align-items-center justify-content-center flex-wrap"
+        style="background-image: url(a1.jpg);background-size: cover;">
+        <div class="col-md-7 d-flex align-items-start justify-content-center flex-column px-5 pb-5"
+          style="height: 500px;position: relative;">
+          <span style="color: #B98E44;font-size: 80px;"><i class="bi bi-quote"></i></span>
+          <h1 style="color: #ffffff;font-family: serif;"><span
+              style="font-style: italic;font-weight: 550;border-bottom: 2px solid white;">Everyone wants</span> to say
+            they hate <br> lawyers and yet I've never met <br> a parent who didn't want their <br> <span
+              style="font-style: italic;font-weight: 550;border-bottom: 2px solid white;">kid to be a lawyer.</span>
+          </h1>
+          <p class="mt-4" style="font-size: 15px;color: #B98E44;">@JASON STATHAM</p>
+          <div class="position-absolute" style="top: 320px;left: 170px;">
+            <h1
+              style="font-size: 200px;color: #ffffff30;font-style: italic;font-weight:550;font-family: serif;display: none;">
+              success
+            </h1>
+          </div>
+        </div>
+        <div class="col-md-5 d-flex align-items-start justify-content-start"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-3">
+    <div class="container">
+      <div class="row py-3" style="margin-top: 250px;">
+        <p style="color: #B98E44;font-size: 20px;text-align: center;">Our news and blog</p>
+        <h1 style="color: #152833;font-size: 45px;text-align: center;font-family: serif;">Updated <span
+            style="border-bottom: 2px solid #152833;font-style: italic;font-weight: 550;">latest news</span></h1>
+      </div>
+      <div class="row py-3" id="Journal">
+        <div class="col-lg-4 d-flex align-items-center justify-content-center " data-aos="fade-up"
+          data-aos-duration="2500">
+          <div class="col-12 d-flex align-items-start justify-content-evenly flex-column p-0"
+            style="background-color: whitesmoke;position: relative;border-radius: 10px 10px 0 0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.31) ;">
+            <img src="s1.jpg" style="height: 60%;width: 100%;object-fit: cover;border-radius: 10px 10px 0 0;" alt="">
+            <button
+              style="position: absolute;top: 20px;left: 240px;background-color: #ffffff;color: #152833;border: none;padding: 4px 8px;">LAWYER</button>
+            <h1 class="ms-4 p-3 mt-4 data-2" style="font-size: 25px;text-align: center;font-family: serif;">What to do
+              if teammates <br> do not appreciate you?</h1>
+            <div class="col-10 d-flex align-items-center justify-content-between">
+              <p class="ms-5" style="color: #898D95;font-size: 18px;font-family:arial;">30 March 2023 </p>
+              <span class="mb-3 ms-5"><i class=" bi bi-suit-heart" style="color: brown;"></i> 65</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center justify-content-center " data-aos="fade-up"
+          data-aos-duration="2500">
+          <div class="col-12 d-flex align-items-start justify-content-evenly flex-column p-0"
+            style="background-color: whitesmoke;position: relative;border-radius: 10px 10px 0 0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.31) ;">
+            <img src="s3.jpg" style="height: 60%;width: 100%;object-fit: cover;border-radius: 10px 10px 0 0;" alt="">
+            <button
+              style="position: absolute;top: 20px;left: 240px;background-color: #ffffff;color: #152833;border: none;padding: 4px 8px;">LAWYER</button>
+            <h1 class="ms-4 p-3 mt-4 data-2" style="font-size: 25px;text-align: center;font-family: serif;">Getting a
+              consultant <br> is the best decision.</h1>
+            <div class="col-10 d-flex align-items-center justify-content-between">
+              <p class="ms-5" style="color: #898D95;font-size: 18px;font-family:arial;">30 March 2023 </p>
+              <span class="mb-3 ms-5"><i class=" bi bi-suit-heart" style="color: brown;"></i> 25</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center justify-content-center " data-aos="fade-up"
+          data-aos-duration="2500">
+          <div class="col-12 d-flex align-items-start justify-content-evenly flex-column p-0"
+            style="background-color: whitesmoke;position: relative;border-radius: 10px 10px 0 0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.31) ;">
+            <img src="s4.jpg" style="height: 60%;width: 100%;object-fit: cover;border-radius: 10px 10px 0 0;" alt="">
+            <button
+              style="position: absolute;top: 20px;left: 240px;background-color: #ffffff;color: #152833;border: none;padding: 4px 8px;">LAWYER</button>
+            <h1 class="ms-4 p-3 mt-4 data-2" style="font-size: 25px;text-align: center;font-family: serif;">Research and
+              strategy <br> are vital for the market.</h1>
+            <div class="col-10 d-flex align-items-center justify-content-between">
+              <p class="ms-5" style="color: #898D95;font-size: 18px;font-family:arial;">30 March 2023 </p>
+              <span class="mb-3 ms-5"><i class=" bi bi-suit-heart" style="color: brown;"></i> 300</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-5" style="background-color: #152833;">
+    <div class="container">
+      <div class="row py-4" style="border-bottom: 1px solid #898D95;" id="contact">
+        <div class="col-lg-8  " style="position: relative;">
+          <img src="d1.webp" style="opacity: 10%;height: 120px;" alt="">
+          <h1 class="hhc" style="color: #ffffff;position: absolute;top: 42px;font-family: serif;left: 55px;font-size: 35px;">Contact
+            us today for a <span style="font-style: italic;border-bottom: 2px solid #ffffff;font-weight: 550;">free case
+              evaluation?</span></h1>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center justify-content-center mt-3">
+          <button style="font-family: arial;font-weight: bold;font-size: 18px;color: #152833;border-radius: 50px;border: none;font-size: 18px;" class="corosol">Explore
+            Company <i style="color: #152833;font-size: 22px;" class="bi bi-arrow-right-circle-fill  ms-2 "></i></button>
+        </div>
+      </div>
+      <div class="row mt-3 py-4" style="border-bottom: 1px solid #768086;">
+        <div class="col-lg-2 d-flex align-items-start justify-content-start">
+          <img class="mb-3" src="demo-lawyer-logo-white.png" alt="">
+        </div>
+        <div class="col-lg-4 d-flex align-items-center justify-content-center">
+          <h1 style="font-size: 25px;color: #768086;font-family: serif;">Over the years, our commitment to excellence
+            and passion for our <p style="font-style: italic;color: #ffffff;" class="mt-2">clients has been recognized.</p>
+          </h1>
+        </div>
+        <div class="col-lg-3 d-flex align-items-start justify-content-center flex-column">
+          <h1 style="color: #ffffff;font-size: 18px;"><i class="bi bi-geo-alt"></i> Landmark</h1>
+          <p style="color: #768086;font-size: 18px;">27 Eden eden centre,</p>
+          <p style="color: #768086;font-size: 18px;">Orchard, Paris, France</p>
+        </div>
+        <div class="col-lg-3 d-flex align-items-start justify-content-center flex-column">
+          <h1 style="font-size: 18px;color: #ffffff;"><i class="bi bi-telephone-outbound"></i> Contact</h1>
+          <p class="data-3">(123) 456 7890</p>
+          <h1 style="color: #ffffff;font-size: 20px;border-bottom: 1px solid #ffffff;">info@domain.com</h1>
+        </div>
+      </div>
+      <div class="row py-4 mt-4 ">
+        <div class="col-lg-8 d-flex align-items-center justify-content-evenly">
+          <p class="data-3">Home</p>
+          <p class="data-3">About</p>
+          <p class="data-3">Attorneys</p>
+          <p class="data-3">Journal</p>
+          <p class="data-3">Contact</p>
+        </div>
+        <div class="col-lg-4 d-flex align-items-start justify-content-evenly">
+          <p style="color: #768086;font-size: 17px;">© 2024 Crafto is Powered by <span
+              style="color: #ffffff;border-bottom: 1px solid #ffffff;">ThemeZaa</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
